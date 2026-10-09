@@ -1,0 +1,82 @@
+<div class="wrap">
+  <section id="mapView">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <h1>Riddle Blocks</h1>
+          <p class="sub">Solve each riddle in 30 seconds.</p>
+        </div>
+        <div class="pill" aria-label="Coins"><span class="coin"></span><span class="coins">100</span></div>
+      </div>
+      <div class="daily" id="daily" hidden><span class="coin"></span><span id="dailyText"></span></div>
+      <div class="prog">
+        <div class="prog-row"><span>Riddles solved</span><span id="count">0 / 200</span></div>
+        <div class="track"><div id="bar"></div></div>
+        <div class="prog-row"><span>Current streak</span><span id="streak">0 (best 0)</span></div>
+      </div>
+      <button class="btn" id="go">Continue</button>
+      <div id="tiers" class="wrap" style="gap:22px"></div>
+      <div class="settings">
+        <button class="toggle" id="tSound" aria-pressed="true">Sound<b>On</b></button>
+        <button class="toggle" id="tVibe" aria-pressed="true">Vibration<b>On</b></button>
+      </div>
+      <button class="btn ghost" id="reset">Reset progress</button>
+    </div>
+  </section>
+
+  <section id="playView" hidden>
+    <div class="wrap">
+      <div class="nav">
+        <button class="back" id="back">&larr; Levels</button>
+        <div class="lvl"><b id="lvl">Level 1</b><span id="tierName">Sharp</span></div>
+        <div class="pill" aria-label="Coins"><span class="coin"></span><span class="coins">100</span></div>
+      </div>
+      <div class="timer" id="timer" role="timer" aria-label="Time left">
+        <div class="track"><div id="tbar"></div></div>
+        <span id="secs">30</span>
+      </div>
+      <div class="card">
+        <span class="label">Riddle</span>
+        <p class="clue" id="clue"></p>
+        <span class="len" id="len"></span>
+      </div>
+      <div class="slots" id="slots"></div>
+      <div class="pool" id="pool"></div>
+      <p class="msg" id="msg" aria-live="polite"></p>
+      <div class="hints">
+        <button class="hint" id="hReveal">Reveal letter<small><span class="coin sm"></span>25</small></button>
+        <button class="hint" id="hRemove">Remove extras<small><span class="coin sm"></span>15</small></button>
+        <button class="hint" id="hTime">+10 seconds<small><span class="coin sm"></span>30</small></button>
+        <button class="hint" id="hSkip">Skip riddle<small><span class="coin sm"></span>60</small></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="overlay" id="ready" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="readyTitle">
+    <h3 id="readyTitle">Level 1</h3>
+    <div class="big">30s</div>
+    <p id="readyNote">The riddle appears when you start. The clock does not stop.</p>
+    <button class="btn" id="start">Start</button>
+    <button class="btn ghost" id="readyBack">Back to levels</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+    <h3 id="winTitle">Solved!</h3>
+    <div class="ans" id="winAns"></div>
+    <p id="winNote"></p>
+    <button class="btn" id="next">Next level</button>
+  </div>
+</div>
+
+<div class="overlay" id="timeup" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tuTitle">
+    <h3 id="tuTitle">Time's up</h3>
+    <p id="tuNote">The riddle stays the same. Try again with a fresh clock.</p>
+    <button class="btn" id="retry">Try again</button>
+    <button class="btn ghost" id="tuBack">Back to levels</button>
+  </div>
+</div>
