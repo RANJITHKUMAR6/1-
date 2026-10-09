@@ -1,9 +1,0 @@
-{
-  "appId": "com.riddleblocks.app",
-  "appName": "Riddle Blocks",
-  "webDir": "www",
-  "backgroundColor": "#0E1829",
-  "android": {
-    "allowMixedContent": false
-  }
-}
